@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" }
+  ],
+  "functions": {
+    "api/**/*": {
+      "runtime": "@vercel/node@3.0.0"
+    }
+  }
+} 

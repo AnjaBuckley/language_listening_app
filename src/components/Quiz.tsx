@@ -18,10 +18,16 @@ const Quiz: React.FC<QuizProps> = ({ quiz, onComplete }) => {
     if (!selectedOption) return;
     
     setIsSubmitted(true);
+    console.log('Quiz submitted with answer:', selectedOption);
+    console.log('Correct answer is:', quiz.correctAnswer);
+    
     if (onComplete) {
-      onComplete(isCorrect);
+      console.log('Calling onComplete with result:', selectedOption === quiz.correctAnswer);
+      onComplete(selectedOption === quiz.correctAnswer);
     }
   };
+  
+  console.log('Quiz component rendering with:', quiz);
   
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
